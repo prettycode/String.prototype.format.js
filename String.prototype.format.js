@@ -1,3 +1,15 @@
+/*
+	String.prototype.format.js
+	Copyright (c) 2011, Chris O'Brien, prettycode.org
+	http://github.com/prettycode/String.prototype.format.js
+	
+	LICENSE: Permission is hereby granted for unrestricted
+	use, modification, and restribution of this script, only 
+	under the condition that this code comment appearing in
+	the script is kept wholly complete, appearing above the 
+	script's code body.
+*/ 
+
 String.prototype.$format = function() {
  
     // Convert 'arguments' to real array
