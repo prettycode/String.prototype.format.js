@@ -1,0 +1,22 @@
+Use this script to improve readability to your string formatting. Based off of C#'s String.Format method.
+
+Example usages:
+
+	console.log("Hi {0}, I'm {1}. How are you, {0}? {2}!".$format("Chris", "swell", "sweet"));
+	
+	console.log("Hi {0}.".$format("Chris"));
+	
+	console.log("I'm {mood}. How are you, {name}? Hope you're {hope}!".$format({
+		name: "Chris",
+		mood: "swell",
+		hope: "rockn n rollin"
+	}));
+
+	var question = "What does the {noun1} know that the {noun2} doesn't?";
+	
+	console.log(question.$format({
+		noun1: "nose",
+		noun2: "mustache"
+	}));
+
+For a live example, see: http://jsfiddle.net/VnVch/
