@@ -1,26 +1,25 @@
+Make sure the browser JavaScript debugger is enable and the JavaScript console is showing.
+
 <script src="String.prototype.format.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 
-var sentence = "What does the {0} know that the {1} doesn't? Only the {0} knows!";
+	var unformatted = "What does the {0} know that the {1} doesn't? Only the {0} knows!",
+	      formatted = "What does the mustache know that the nose doesn't? Only the mustache knows!";
 
-if (sentence.$format("mustache", "nose") !==
-    "What does the mustache know that the nose doesn't? Only the mustache knows!") {
-	console.log("test failure");
-	debugger;
-}
+	if (unformatted.$format("mustache", "nose") !== formatted) {
+		throw "Numeric replacement test failure.";
+	}
 
-sentence = "What does the {noun1} know that the {noun2} doesn't? Only the {noun1} knows!";
+	unformatted = "What does the {noun1} know that the {noun2} doesn't? Only the {noun1} knows!";
 
-if (sentence.$format({
-	noun1: "mustache",
-	noun2: "nose"
-}) !==
-    "What does the mustache know that the nose doesn't? Only the mustache knows!") {
-	console.log("test failure");
-	debugger;
-}
+	if (unformatted.$format({
+		noun1: "mustache",
+		noun2: "nose"
+	}) !== formatted) {
+		throw "Named object memeber replacement failure.";
+	}
 
-console.log("All tests pass.");
+	console.log("All tests pass.");
 
 </script>
