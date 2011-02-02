@@ -1,5 +1,5 @@
 /*
-	Original script title: String.prototype.format.js
+	Original script title: String.prototype.format.js, v1.0
 	Copyright (c) 2011, Chris O'Brien, prettycode.org
 	http://github.com/prettycode/String.prototype.format.js
 	
