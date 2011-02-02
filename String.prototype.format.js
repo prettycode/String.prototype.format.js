@@ -21,18 +21,6 @@ String.prototype.$format = function() {
     if (args.length === 1 && typeof(args[0]) === "object") {
         args = args[0];
     }
-    
-    // 'arguments' was an n-length list of strings 
-    
-    else {
-        var replace = {};
-       
-        for (var i in args) {
-            replace[i] = args[i];
-        }
-       
-        args = replace;
-    }
    
     // Do the replacing/formatting; args is now an object
    
