@@ -1,4 +1,4 @@
-Use this script to improve readability to your string formatting. Based off of C#'s String.Format method.
+Use this script to improve readability to your string formatting. 
 
 Example usages:
 
@@ -18,5 +18,3 @@ Example usages:
 		noun1: "nose",
 		noun2: "mustache"
 	}));
-
-For a live example, see: http://jsfiddle.net/VnVch/
