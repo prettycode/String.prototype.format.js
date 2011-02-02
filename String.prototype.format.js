@@ -1,13 +1,14 @@
 /*
-	String.prototype.format.js
+	Original script title: String.prototype.format.js
 	Copyright (c) 2011, Chris O'Brien, prettycode.org
 	http://github.com/prettycode/String.prototype.format.js
 	
-	LICENSE: Permission is hereby granted for unrestricted
-	use, modification, and restribution of this script, only 
-	under the condition that this code comment appearing in
-	the script is kept wholly complete, appearing above the 
-	script's code body.
+	LICENSE: Permission is hereby granted for unrestricted use,
+	modification, and restribution of this script, ONLY under
+	the condition that this code comment is kept wholly complete,
+	appearing above the script's code body--in all original or
+	modified implementations of this script, except those that
+	are minified.
 */ 
 
 String.prototype.$format = function() {
