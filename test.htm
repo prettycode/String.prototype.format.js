@@ -4,20 +4,28 @@ Make sure the browser JavaScript debugger is enabled and the JavaScript console 
 
 <script type="text/javascript">
 
-	var unformatted = "What does the {0} know that the {1} doesn't? Only the {0} knows!",
-	      formatted = "What does the mustache know that the nose doesn't? Only the mustache knows!";
-
-	if (unformatted.$format("mustache", "nose") !== formatted) {
-		throw "Numeric replacement test failure.";
+	var unformatted = "What does the {0} know that the {1} doesn't? Only the {1} knows!",
+	    formattedCorret = "What does the mustache know that the nose doesn't? Only the nose knows!",
+		formatted;
+		  
+	if ((formatted = unformatted.$format("mustache", "nose", "nose")) !== formattedCorret) {
+		throw new Error("Numeric replacement test failure.");
 	}
 
-	unformatted = "What does the {noun1} know that the {noun2} doesn't? Only the {noun1} knows!";
+	unformatted = "What does the {} know that the {} doesn't? Only the nose knows!";
+	
+	if ((formatted = unformatted.$format("mustache", "nose")) !== formattedCorret) {
+		throw new Error("Implicit numeric replacement test failure.");
+	}
 
-	if (unformatted.$format({
+	unformatted = "What does the {noun1} know that the {noun2} doesn't? Only the {noun2} knows!";
+	formatted = unformatted.$format({
 		noun1: "mustache",
 		noun2: "nose"
-	}) !== formatted) {
-		throw "Named object memeber replacement failure.";
+	});
+	
+	if (formatted !== formattedCorret) {
+		throw new Error("Named object memeber replacement failure.");
 	}
 
 	console.log("All tests pass.");

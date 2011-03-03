@@ -1,20 +1,28 @@
-Use this script to improve readability to your string formatting. 
+Use this script to improve readability to your string formatting. It's meant to be very simple and
+limited--not any fully-functional port of any language or library's equivalent format method.
 
-Example usages:
+For example, given:
 
-	console.log("Hi {0}, I'm {1}. How are you, {0}? {2}!".$format("Chris", "swell", "sweet"));
+	var unformatted = "What does the {0} know that the {1} doesn't? Only the {1} knows!";
+	console.log(unformatted.$format("mustache", "nose"));
 	
-	console.log("Hi {0}.".$format("Chris"));
+The console will log: "What does the mustache know that the nose doesn't? Only the nose knows!"
+
+Or, given:
 	
-	console.log("I'm {mood}. How are you, {name}? Hope you're {hope}!".$format({
-		name: "Chris",
-		mood: "swell",
-		hope: "rockn n rollin"
+	var unformatted = "What does the {} know that the {} doesn't? Only the {} know!";
+	console.log(unformatted.$format("mustache", "nose", "noses"));
+	
+The console will log: "What does the mustache know that the nose doesn't? Only the noses know!"
+This is similar to the first example, except that the numbers are implicit.
+
+Finally, given:
+
+	var unformatted = "What does the {noun1} know that the {noun2} doesn't? Only the {noun2} knows!";
+	console.log(formatted.$format({
+		noun1: "mustache",
+		noun2: "nose"
 	}));
-
-	var question = "What does the {noun1} know that the {noun2} doesn't?";
 	
-	console.log(question.$format({
-		noun1: "nose",
-		noun2: "mustache"
-	}));
+The console will log: "What does the mustache know that the nose doesn't? Only the nose knows!"
+	

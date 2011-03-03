@@ -25,14 +25,20 @@ String.prototype.$format = function() {
    
     // Do the replacing/formatting; args is now an object
    
-    var result = this;
-   
-    for (var key in args) {
-        if (args.hasOwnProperty(key)) {
-            result = result.replace(new RegExp("\\{" + key + "\\}", "gm"), args[key]);
-        }
-    }
-   
+    var result = this, match;
+		
+	for (var i = 0; match = /{(\d+|\w+)?}/gm.exec(result); i++) {
+	
+		var key = match[1];
+		
+		if (!key) {
+			result = result.replace("{}", args[i]);
+		}
+		else {
+			result = result.replace(new RegExp("\\{" + key + "\\}", "gm"), args[key]);
+		}
+	}
+	
     return result;
                
 };
