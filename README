@@ -1,5 +1,5 @@
-Use this script to improve readability to your string formatting. It's meant to be very simple and
-limited--not any fully-functional port of any language or library's equivalent format method.
+Use this script to improve the readability your string formatting. It's meant to be very simple and
+limited, not a fully-functional port of any language or library's equivalent format method.
 
 For example, given:
 
