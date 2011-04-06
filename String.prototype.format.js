@@ -11,7 +11,7 @@
     are minified.
 */ 
 
-String.prototype.$format = function() {
+String.prototype.format = function() {
  
     // Convert 'arguments' to real array
  

@@ -13,18 +13,19 @@
 	    formattedCorret = "What does the mustache know that the nose doesn't? No nose knows!",
 		formatted;
 		  
-	if ((formatted = unformatted.$format("mustache", "nose", "nose")) !== formattedCorret) {
+	if ((formatted = unformatted.format("mustache", "nose", "nose")) !== formattedCorret) {
 		throw new Error("Numeric replacement test failure.");
 	}
 
 	unformatted = "What does the {} know that the {} doesn't? No nose knows!";
 	
-	if ((formatted = unformatted.$format("mustache", "nose")) !== formattedCorret) {
+	if ((formatted = unformatted.format("mustache", "nose")) !== formattedCorret) {
 		throw new Error("Implicit numeric replacement test failure.");
 	}
 
 	unformatted = "What does the {noun1} know that the {noun2} doesn't? No {noun2} knows!";
-	formatted = unformatted.$format({
+	
+    formatted = unformatted.format({
 		noun1: "mustache",
 		noun2: "nose"
 	});
