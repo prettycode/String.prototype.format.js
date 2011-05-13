@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<script src="String.prototype.format.js" type="text/javascript"></script>
+    <script src="String.prototype.format.js" type="text/javascript"></script>
 </head>
 <body>
     Make sure the browser JavaScript debugger is enabled and the JavaScript console is showing.
@@ -9,32 +9,32 @@
 
 <script type="text/javascript">
 
-	var unformatted = "What does the {0} know that the {1} doesn't? No {1} knows!",
-	    formattedCorret = "What does the mustache know that the nose doesn't? No nose knows!",
-		formatted;
-		  
-	if ((formatted = unformatted.format("mustache", "nose", "nose")) !== formattedCorret) {
-		throw new Error("Numeric replacement test failure.");
-	}
+    var unformatted = "What does the {0} know that the {1} doesn't? No {1} knows!",
+        formattedCorret = "What does the mustache know that the nose doesn't? No nose knows!",
+        formatted;
+          
+    if ((formatted = unformatted.format("mustache", "nose", "nose")) !== formattedCorret) {
+        throw new Error("Numeric replacement test failure.");
+    }
 
-	unformatted = "What does the {} know that the {} doesn't? No nose knows!";
-	
-	if ((formatted = unformatted.format("mustache", "nose")) !== formattedCorret) {
-		throw new Error("Implicit numeric replacement test failure.");
-	}
+    unformatted = "What does the {} know that the {} doesn't? No nose knows!";
+    
+    if ((formatted = unformatted.format("mustache", "nose")) !== formattedCorret) {
+        throw new Error("Implicit numeric replacement test failure.");
+    }
 
-	unformatted = "What does the {noun1} know that the {noun2} doesn't? No {noun2} knows!";
-	
+    unformatted = "What does the {noun1} know that the {noun2} doesn't? No {noun2} knows!";
+    
     formatted = unformatted.format({
-		noun1: "mustache",
-		noun2: "nose"
-	});
-	
-	if (formatted !== formattedCorret) {
-		throw new Error("Named object memeber replacement failure.");
-	}
+        noun1: "mustache",
+        noun2: "nose"
+    });
+    
+    if (formatted !== formattedCorret) {
+        throw new Error("Named object memeber replacement failure.");
+    }
 
-	console.log("All tests pass.");
+    console.log("All tests pass.");
 
 </script>
 
