@@ -1,19 +1,16 @@
-/*
-    Original script title: String.prototype.format.js, v1.0
+/*  
+    Original script title: "String.prototype.format.js"; version 1.0
     Copyright (c) 2011, Chris O'Brien, prettycode.org
     http://github.com/prettycode/String.prototype.format.js
     
-    LICENSE: Permission is hereby granted for unrestricted use,
-    modification, and redistribution of this script, ONLY under
-    the condition that this code comment is kept wholly complete,
-    appearing above the script's code body--in all original or
-    modified implementations of this script, except those that
-    are minified.
+    Permission is hereby granted for unrestricted use, modification, and redistribution of this
+    script, only under the condition that this code comment is kept wholly complete, appearing
+    directly above the script's code body, in all original or modified non-minified representations
 */ 
 
 String.prototype.format = function() {
  
-    // Convert 'arguments' to real array
+    // Convert `arguments` to real []
  
     var args = Array.prototype.slice.call(arguments);
    
