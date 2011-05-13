@@ -19,7 +19,7 @@ String.prototype.format = function() {
    
     // First arg is an object map
    
-    if (args.length == 1 && typeof args[0] == "object") {
+    if (args.length === 1 && typeof args[0] === "object") {
         args = args[0];
     }
    
