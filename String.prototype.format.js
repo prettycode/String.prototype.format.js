@@ -8,33 +8,34 @@
     directly above the script's code body, in all original or modified non-minified representations
 */ 
 
-String.prototype.format = function() {
- 
+String.prototype.format = function () {
+    "use strict";
     // Convert `arguments` to real []
  
-    var args = Array.prototype.slice.call(arguments);
-   
-    // First arg is an object map
-   
-    if (args.length === 1 && typeof args[0] === "object") {
-        args = args[0];
+    var args = Array.prototype.slice.call(arguments),
+        object_map = args[0],
+        result = this,
+        i,    /* = undefined */
+        key,  /* = undefined */
+        match;/* = undefined */
+
+    if (args.length === 1 && typeof object_map === "object") {
+        for (i = 0; match = /\{(\w+)\}/gm.exec(result); i++) {
+            key = match[1]; 
+
+            if (!!key) {
+                result = result.split("{" + key + "}")
+                               .join(object_map[key]);
+            }
+        }
+
+    } else {
+        for (i = 0; i < args.length; i++) {
+            result = result.replace("{}", args[i])
+                           .split("{" + i + "}")
+                           .join(args[i]);
+        }
     }
    
-    // Do the replacing/formatting; args is now an object
-   
-    var result = this, match;
-        
-    for (var i = 0; match = /{(\d+|\w+)?}/gm.exec(result); i++) {
-    
-        var key = match[1];
-        
-        if (!key) {
-            result = result.replace("{}", args[i]);
-        }
-        else {
-            result = result.replace(new RegExp("\\{" + key + "\\}", "gm"), args[key]);
-        }
-    }
-    
     return result;
 };
