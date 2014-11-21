@@ -1,6 +1,6 @@
 /*  
     Original script title: "String.prototype.format.js"; version 1.0
-    Copyright (c) 2011, Chris O'Brien, prettycode.org
+    Copyright (c) 2011, Chris O'Brien, prettycode.org, MIT license
     http://github.com/prettycode/String.prototype.format.js
 */ 
 
