@@ -1,11 +1,11 @@
-For a version of this string formatter as a function that is NOT a prototype on `String`, see: 
-	
-	https://gist.github.com/prettycode/e458ba85a4b19b105674
-
 String.prototype.format
 =======================
 
 Use this script to improve the readability your string formatting. It supports multiple formatting conventions. This is not a direct port of any particular language or library's string formatter.
+
+**For a version of this string formatter that is NOT a prototype on `String`, see:**
+	
+	https://gist.github.com/prettycode/e458ba85a4b19b105674
 
 Formatting using numbered brackets:
 
