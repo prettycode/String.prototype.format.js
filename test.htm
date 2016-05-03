@@ -33,6 +33,13 @@
     if (formatted !== formattedCorret) {
         throw new Error("Named object memeber replacement failure.");
     }
+    
+    unformatted = 'This sould show "null": {}';
+    formattedCorret = 'This sould show "null": null';
+    
+    if (unformatted.format(null) !== formattedCorret) {
+        throw new Error("Single null argument not interpreted correctly.");
+    }
 
     console.log("All tests pass.");
 
