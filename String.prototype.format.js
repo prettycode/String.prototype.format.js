@@ -7,7 +7,7 @@ String.prototype.format = function() {
         format = this,
         match;
    
-    if (args.length === 1 && typeof args[0] === "object") {
+    if (args.length === 1 && typeof args[0] === "object" && args[0] !== null) {
         args = args[0];
     }
     
